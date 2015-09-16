@@ -42,7 +42,7 @@ const bool Socket::open(const unsigned short port)
 		std::cout << "Failed to set socket to non-blocking on socket: " << m_handle << std::endl;
 		return false;
 	}
-#elif PLATFORM == PLATFORM_MAC || PLATFORM_UNIX
+#elif PLATFORM == PLATFORM_MAC || PLATFORM == PLATFORM_UNIX
 	int nonBlocking = 1;
 
 	if (fcntl(m_handle, F_SETFL, O_NONBLOCK, nonBlocking) == -1)
@@ -61,7 +61,7 @@ void Socket::close()
 {
 #if PLATFORM == PLATFORM_WINDOWS
 	closesocket(m_handle);
-#elif PLATFORM == PLATFORM_MAC || PLATFORM_UNIX
+#elif PLATFORM == PLATFORM_MAC || PLATFORM == PLATFORM_UNIX
 	close(m_handle);
 #endif
 
