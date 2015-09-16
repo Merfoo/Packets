@@ -20,11 +20,13 @@ int main()
 		unsigned char buffer[bufferLength];
 		int bytes_read = socket.recieve(from, buffer, bufferLength);
 
+		if (bytes_read <= 0)
+			continue;
+
 		for (int i = 0; i < bufferLength; i++)
 			std::cout << buffer[i] << " : ";
 
-		std::cout << std::endl;
-		break;
+		std::cout << std::endl << bytes_read << std::endl;
  	}
 
 	socket.close();

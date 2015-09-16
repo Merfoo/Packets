@@ -47,7 +47,7 @@ const bool Socket::open(const unsigned short port)
 
 	if (fcntl(m_handle, F_SETFL, O_NONBLOCK, nonBlocking) == -1)
 	{
-		std::cout << "Failed to set socket to non-blocking on port: " << port << std::endl;
+		std::cout << "Failed to set socket to non-blocking on socket: " << m_handle << std::endl;
 		return false;
  	}
 #endif
