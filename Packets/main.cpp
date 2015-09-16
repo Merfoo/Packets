@@ -30,7 +30,7 @@ int main()
 	socket.close();
 
 	std::cout << "Hello World!\n";
-	system("pause");
+	std::cin.get();	
 	Socket::shutdownSockets();
 
 	return 0;

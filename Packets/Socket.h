@@ -20,8 +20,9 @@
 #pragma comment(lib, "wsock32.lib")
 #include <WinSock2.h>
 #elif PLATFORM == PLATFORM_MAC || PLATFORM == PLATFORM_UNIX
-#include <sys\socket.h>
-#include <netinet\in.h>
+#include <sys/socket.h>
+#include <unistd.h>
+#include <netinet/in.h>
 #include <fcntl.h>
 #endif
 

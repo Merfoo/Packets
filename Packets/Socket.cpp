@@ -62,7 +62,7 @@ void Socket::close()
 #if PLATFORM == PLATFORM_WINDOWS
 	closesocket(m_handle);
 #elif PLATFORM == PLATFORM_MAC || PLATFORM == PLATFORM_UNIX
-	close(m_handle);
+	::close(m_handle);
 #endif
 
 	m_isOpen = false;
